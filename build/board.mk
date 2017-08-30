@@ -1,0 +1,17 @@
+include $(TOOL_ROOT)/configs/arm-linux.mk
+include $(TOOL_ROOT)/cmn.mk
+
+TARGET_PROG = app
+
+TARGET_PROG_SRCS = \
+				   $(CMN_SRCS)  \
+
+TARGET_PROG_CPP_SRCS = \
+				   $(CMN_CPP_SRCS)  \
+
+TARGET_PROG_CFLAGS = $(CMN_CFLAGS) -D__LITTLE_ENDIAN__ -DCS_MIF_DEBUG -funwind-tables
+TARGET_PROG_CPPFLAGS = $(CMN_CPPFLAGS) -D__LITTLE_ENDIAN__ -DCS_MIF_DEBUG -funwind-tables
+
+
+TARGET_PROG_LD_FLAGS =$(CMN_LDFLAGS) 
+
